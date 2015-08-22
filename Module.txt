@@ -1,0 +1,11 @@
+﻿Name: Amba.AmazonS3
+AntiForgery: enabled
+Author: Alexey V. Ryazhskikh
+Website: http://orchardproject.net
+Version: 1.0
+OrchardVersion: 1.8
+Category: Media
+Description: Amazon S3 Storage Provider for Media Library.
+Features:
+    Amba.AmazonS3:
+        Description: Amba.AmazonS3 is the Orchard CMS module to enable Amazon S3 storage provider for Media Library.

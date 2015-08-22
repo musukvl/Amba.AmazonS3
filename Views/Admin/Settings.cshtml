@@ -1,0 +1,43 @@
+@model Amba.AmazonS3.ViewModels.SettingsViewModel
+@using Orchard.ContentManagement;
+
+@{ Layout.Title = T("Edit AmazonS3 Settings").ToString(); }
+@using (Html.BeginFormAntiForgeryPost())
+{
+    @Html.ValidationSummary()
+
+    <h2>@T("Amazon S3 Settings")</h2>
+
+    <fieldset>
+
+        <div>
+            @Html.LabelFor(m => m.AWSAccessKey, @T("AccessKey"))
+            @Html.EditorFor(m => m.AWSAccessKey)
+            @Html.ValidationMessageFor(m => m.AWSAccessKey, "*")
+        </div>
+        <div>
+            @Html.LabelFor(m => m.AWSSecretKey, @T("SecretKey"))
+            @Html.EditorFor(m => m.AWSSecretKey)
+            @Html.ValidationMessageFor(m => m.AWSSecretKey, "*")
+        </div>
+        <div>
+            @Html.LabelFor(m => m.AWSFileBucket, @T("Bucket"))
+            @Html.EditorFor(m => m.AWSFileBucket)
+            @Html.ValidationMessageFor(m => m.AWSFileBucket, "*")
+        </div>
+@* // not implemented
+        <div>
+            @Html.LabelFor(m => m.RootFolder, @T("Root Folder"))
+            @Html.EditorFor(m => m.RootFolder)
+            @Html.ValidationMessageFor(m => m.RootFolder, "*")
+        </div>
+*@
+        <div>
+            @Html.LabelFor(m => m.AWSS3PublicUrl, @T("PublicUrl"))
+            @Html.EditorFor(m => m.AWSS3PublicUrl)
+            @Html.ValidationMessageFor(m => m.AWSS3PublicUrl, "*")
+        </div>
+
+    </fieldset>
+    <input type="submit" value="@T("Save settings")" />
+}
