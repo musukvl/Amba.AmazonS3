@@ -31,7 +31,6 @@ namespace Amba.AmazonS3.Services
     }
     /*
      * var root = new S3DirectoryInfo(_client, _configurationService.AWSWalkerUploadBucket);
-            root.
      */
 
     [OrchardSuppressDependency("Orchard.FileSystems.Media.FileSystemStorageProvider")]
@@ -223,6 +222,14 @@ namespace Amba.AmazonS3.Services
             var file = new S3FileInfo(_client, _amazonS3StorageConfiguration.AWSFileBucket, oldPath);
             file.MoveToLocal(newPath);
             
+        }
+
+        public void CopyFile(string originalPath, string duplicatePath)
+        {
+            originalPath = CleanPath(originalPath);
+            duplicatePath = CleanPath(duplicatePath);
+            var file = new S3FileInfo(_client, _amazonS3StorageConfiguration.AWSFileBucket, originalPath);
+            file.CopyToLocal(duplicatePath);
         }
 
         public void PublishFile(string path)
