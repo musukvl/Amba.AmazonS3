@@ -9,3 +9,4 @@ Description: Amazon S3 Storage Provider for Media Library.
 Features:
     Amba.AmazonS3:
         Description: Amba.AmazonS3 is the Orchard CMS module to enable Amazon S3 storage provider for Media Library.
+        Category: Media
